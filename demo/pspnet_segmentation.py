@@ -109,7 +109,7 @@ def run_crfrnn(input_file, output_file, gpu_device):
     image = PILImage.fromarray(np.uint8(input_image))
     image = np.array(image)
 
-    palette = get_palette(256) # 256 origion
+    palette = get_palette(256)
     #PIL reads image in the form of RGB, while cv2 reads image in the form of BGR, mean_vec = [R,G,B] 
     mean_vec = np.array([123.68, 116.779, 103.939], dtype=np.float32)
     mean_vec = mean_vec.reshape(1, 1, 3)
