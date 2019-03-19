@@ -20,6 +20,7 @@ import caffe
 
 _MAX_DIM = 473
 
+# Taking Shanghai as an example
 CITY = 'SH'
 
 
