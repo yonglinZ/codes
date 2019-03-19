@@ -131,8 +131,8 @@ def run_crfrnn(input_file, output_file, gpu_device):
 
     output_im = PILImage.fromarray(segmentation)
     output_im.putpalette(palette)
-    # attention!!!!!!!!~~~~~~~~~~~~~~*********&*&&&&&&&  375
-    output_im = output_im.resize((1000,375), resample=PILImage.BILINEAR)
+    # attention 500
+    output_im = output_im.resize((1000,500), resample=PILImage.BILINEAR)
     output_im.save(output_file)
 
     return segmentation # return segmentaion mask
@@ -269,9 +269,6 @@ if __name__ == "__main__":
     df_out['impath'] = series_image
     df_out['time'] = series_TI
     df_out['res'] = series_scene
-    #print df_out
-    # df_out = DataFrame([series_image,series_TI,scene_parsed_li]) this way went wrong
-    # and i don't know why.
   
     result_file_name = CITY+'_pspnet_seg_res.csv'
     df_out.to_csv(os.path.join('results',result_file_name))
